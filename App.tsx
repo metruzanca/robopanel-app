@@ -4,14 +4,9 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import useCachedResources from './hooks/useCachedResources';
 // import useColorScheme from './hooks/useColorScheme';
-import Navigation from './navigation';
-
-// required for react native
-// import {} from 'styled-components/cssprop'
+import Navigation from './screens';
 
 // TODO setup theme provider for styled-components
-
-import LoginScreen from './screens/LoginScreen'
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -22,8 +17,7 @@ export default function App() {
   } else {
     return (
       <SafeAreaProvider>
-        {/* <Navigation /> */}
-        <LoginScreen />
+        <Navigation />
         <StatusBar />
       </SafeAreaProvider>
     );

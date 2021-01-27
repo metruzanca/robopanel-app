@@ -1,0 +1,29 @@
+{
+	"React Native Stack Page Template": {
+		"prefix": "stackpage",
+		"body": [
+			"import React, {} from 'react';",
+			"",
+			"import { StackScreenProps } from '@react-navigation/stack';",
+			"import { RootStackParamList } from '../../types';",
+			"",
+			"import { View } from 'react-native';",
+			"import {Text} from '../../style'",
+			"",
+			"interface Props extends StackScreenProps<RootStackParamList, '${2:PageName}'> {}",
+			"",
+			"const ${1:$TM_FILENAME_BASE}: React.FC<Props> = ({}) =>  {",
+			"  return (",
+			"    <View>",
+			"      <Text>",
+			"        Hello There!",
+			"      </Text>",
+			"    </View>",
+			"  );",
+			"}",
+			"",
+			"export default ${1:$TM_FILENAME_BASE}"
+		],
+		"description": "React Native Stack Page Template"
+	}
+}

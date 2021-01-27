@@ -1,20 +1,26 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components/native';
+
 import { LinearGradient } from 'expo-linear-gradient';
 
-import {Text, theme} from '../style'
+import {Text, theme} from '../../style'
+import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParamList } from '../../types';
 
-export default function LoginScreen() {
+interface Props extends StackScreenProps<RootStackParamList, 'Login'> {
+  onLogin: () => void
+}
+
+const LoginScreen: React.FC<Props> = ({ onLogin }) => {
   return (
     <Wrapper>
       <Main>
         <Title>Sign In</Title>
+
         <InputField type="text" placeholder="Username" />
         <InputField type="password" placeholder="Password" />
 
-        <SignInButton
-          onPress={() => console.log("Logged in")}
-          >
+        <SignInButton onPress={onLogin}>
           <Gradient
             start={[0, 1]} end={[1, 0]}
             colors={theme.gradient.primary}
@@ -22,11 +28,14 @@ export default function LoginScreen() {
             <SignInText>Sign In</SignInText>
           </Gradient>
         </SignInButton>
+
         <ForgotPassword>Forgot Password?</ForgotPassword>
       </Main>
     </Wrapper>
   );
 }
+
+export default LoginScreen
 
 // TODO figure out boxshadows
 

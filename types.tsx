@@ -1,6 +1,10 @@
+import { StackScreenProps } from "@react-navigation/stack";
+
 export type RootStackParamList = {
   Root: undefined;
   NotFound: undefined;
+  Login: undefined;
+  ServerList: undefined;
 };
 
 export type BottomTabParamList = {
