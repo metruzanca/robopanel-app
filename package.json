@@ -6,7 +6,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "build:web": "expo build:web"
   },
   "jest": {
     "preset": "jest-expo"
@@ -20,6 +21,7 @@
     "@types/styled-components": "^5.1.7",
     "expo": "~40.0.0",
     "expo-asset": "~8.2.1",
+    "expo-cli": "^4.1.0",
     "expo-constants": "~9.3.0",
     "expo-font": "~8.4.0",
     "expo-linear-gradient": "~8.4.0",
