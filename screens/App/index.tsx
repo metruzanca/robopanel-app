@@ -1,21 +1,27 @@
-import React from 'react';
-
-import { StackScreenProps } from '@react-navigation/stack';
+import React, {} from 'react';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { RootStackParamList } from '../../types';
+ 
+import ServerListScreen from './ServerListScreen' 
+import { StackScreenProps } from '@react-navigation/stack';
 
-import { View } from 'react-native';
-import {Text} from '../../style'
-
-interface Props extends StackScreenProps<RootStackParamList, 'ServerList'> {}
-
-const ServerListScreen: React.FC<Props> = ({}) =>  {
-  return (
-    <View>
-      <Text>
-        Hello There! // TODO Drawer navigation
-      </Text>
-    </View>
-  );
+const Drawer = createDrawerNavigator();
+interface Props extends StackScreenProps<RootStackParamList, 'App'> {
+  onLogout: () => void;
 }
 
-export default ServerListScreen
+const App:React.FC<Props> = ({ onLogout: handleLogOut }) => {
+  return (
+    <Drawer.Navigator>
+      <Drawer.Screen name="ServerList">
+        { props => 
+          <ServerListScreen {...props} onLogout={handleLogOut}/>
+        }
+      </Drawer.Screen>
+    </Drawer.Navigator>
+  );
+};
+
+
+export default App
+export {default as ServerListScreen} from './ServerListScreen'

@@ -1,14 +1,13 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-import { StackScreenProps } from '@react-navigation/stack';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import {Text} from '../../style'
-import { RootStackParamList } from '../../types';
+import { AppDrawerParamList } from '../../types';
 import { Button } from 'react-native';
+import { DrawerScreenProps } from '@react-navigation/drawer';
 
-interface Props extends StackScreenProps<RootStackParamList, 'ServerList'> {
+interface Props extends DrawerScreenProps<AppDrawerParamList, 'ServerList'> {
   onLogout: () => void
 }
 
