@@ -1,24 +1,24 @@
 import React, {} from 'react';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { RootStackParamList } from '../../types';
+import { AppStackParamList } from '../../types';
  
 import ServerListScreen from './ServerListScreen' 
-import { StackScreenProps } from '@react-navigation/stack';
+import { createStackNavigator, StackScreenProps } from '@react-navigation/stack';
 
-const Drawer = createDrawerNavigator();
-interface Props extends StackScreenProps<RootStackParamList, 'App'> {
+const Stack = createStackNavigator<AppStackParamList>();
+
+interface Props extends StackScreenProps<AppStackParamList, 'ServerList'> {
   onLogout: () => void;
 }
 
 const App:React.FC<Props> = ({ onLogout: handleLogOut }) => {
   return (
-    <Drawer.Navigator>
-      <Drawer.Screen name="ServerList">
+    <Stack.Navigator>
+      <Stack.Screen name="ServerList">
         { props => 
           <ServerListScreen {...props} onLogout={handleLogOut}/>
         }
-      </Drawer.Screen>
-    </Drawer.Navigator>
+      </Stack.Screen>
+    </Stack.Navigator>
   );
 };
 

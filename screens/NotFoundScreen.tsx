@@ -2,9 +2,9 @@ import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import { RootStackParamList } from '../types';
+import { AuthStackParamList } from '../types';
 
-interface Props extends StackScreenProps<RootStackParamList, 'NotFound'> {}
+interface Props extends StackScreenProps<AuthStackParamList, 'NotFound'> {}
 
 const NotFoundScreen: React.FC<Props> = ({
   navigation

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import {theme} from '../../style'
 import { StackScreenProps } from '@react-navigation/stack';
-import { RootStackParamList } from '../../types';
+import { AuthStackParamList } from '../../types';
 
 import {
   ForgotPassword,
@@ -15,7 +15,7 @@ import {
   Wrapper
 } from './style';
 
-interface Props extends StackScreenProps<RootStackParamList, 'Login'> {
+interface Props extends StackScreenProps<AuthStackParamList, 'Login'> {
   onLogin: (email:string, pass:string) => void
 }
 

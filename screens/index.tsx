@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Button } from 'react-native';
 
-import { RootStackParamList } from '../types';
+import { AuthStackParamList } from '../types';
 
 import NotFoundScreen from './NotFoundScreen';
 import {
@@ -13,7 +13,7 @@ import App from './App';
 
 // A root stack navigator is often used for displaying modals on top of all other content
 // Read more here: https://reactnavigation.org/docs/modal
-const Stack = createStackNavigator<RootStackParamList>();
+const Stack = createStackNavigator<AuthStackParamList>();
 
 export default function Navigation() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

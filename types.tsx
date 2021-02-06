@@ -1,16 +1,15 @@
 import { StackScreenProps } from "@react-navigation/stack";
 
-export type RootStackParamList = {
-  Root: undefined
-  NotFound: undefined
-  App: undefined
-
+export type AuthStackParamList = {
   Login: undefined
   SignUp: undefined
   ForgotPassword: undefined
+  NotFound: undefined
+  
+  App: undefined
 }
 
-export type AppDrawerParamList = {
+export type AppStackParamList = {
   ServerList: undefined
 }
 
@@ -25,4 +24,19 @@ export type TabOneParamList = {
 
 export type TabTwoParamList = {
   TabTwoScreen: undefined
+}
+
+
+export interface Container {
+  id: string
+  names: string[]
+  Image: string
+  Command: string
+  Created: number
+  Ports: Array<{
+    PrivatePort: number
+    PublicPort: number
+  }>
+  State: string
+  Status: string
 }
