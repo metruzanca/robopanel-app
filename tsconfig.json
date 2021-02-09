@@ -7,6 +7,10 @@
     "noEmit": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "strict": true
+    "strict": true,
+    // Empty files don't make tsc complain
+    "isolatedModules": false,
+    // Due to how styled-components/native does their types
+    "noImplicitAny": false
   }
 }
